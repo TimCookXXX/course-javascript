@@ -79,7 +79,7 @@ function findError(where) {
   const result = [];
 
   for (const child of where.children) {
-    result.push(child.innerHTML);
+    result.push(child.textContent);
   }
 
   return result;
@@ -100,7 +100,7 @@ function findError(where) {
 function deleteTextNodes(where) {
   for (const node of where.childNodes) {
     if (node.nodeType === 3) {
-      node.textContent = '';
+      node.remove();
     }
   }
 }
